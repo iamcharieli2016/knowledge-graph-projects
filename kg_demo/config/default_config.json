@@ -1,0 +1,38 @@
+{
+  "extraction": {
+    "similarity_threshold": 0.8,
+    "min_entity_length": 2,
+    "min_confidence": 0.5,
+    "max_context_window": 50,
+    "use_patterns": true,
+    "use_pos_tagging": true,
+    "use_dictionary": true
+  },
+  "mapping": {
+    "entity_similarity_threshold": 0.8,
+    "relation_similarity_threshold": 0.7,
+    "fuzzy_match_threshold": 0.6,
+    "use_semantic_mapping": true,
+    "use_context_mapping": true
+  },
+  "fusion": {
+    "entity_fusion_threshold": 0.8,
+    "relation_fusion_threshold": 0.8,
+    "conflict_resolution_strategy": "highest_confidence",
+    "merge_similar_entities": true,
+    "preserve_provenance": true
+  },
+  "visualization": {
+    "max_nodes": 50,
+    "node_size": 500,
+    "edge_width": 1.0,
+    "layout": "spring",
+    "output_format": "png",
+    "figure_size": [12, 8]
+  },
+  "output_dir": "kg_demo/output",
+  "data_dir": "kg_demo/data",
+  "log_level": "INFO",
+  "enable_caching": true,
+  "cache_dir": "kg_demo/cache"
+}

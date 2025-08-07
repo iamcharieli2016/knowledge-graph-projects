@@ -1,0 +1,22 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+python-multipart==0.0.6
+aiofiles==23.2.1
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+SQLAlchemy==2.0.23
+asyncpg==0.29.0
+redis==5.0.1
+celery==5.3.4
+websockets==12.0
+
+# KG Demo dependencies
+spacy>=3.4.0
+networkx>=2.8
+pandas>=1.5.0
+numpy>=1.21.0
+matplotlib>=3.5.0
+jieba>=0.42.1
+scikit-learn>=1.1.0
+python-Levenshtein>=0.20.0

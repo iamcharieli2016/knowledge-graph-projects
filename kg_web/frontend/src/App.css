@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 16px;
+  border-radius: 6px;
+}
+
+.ant-layout-sider-collapsed .logo h3 {
+  display: none;
+}
+
+/* 自定义样式 */
+.config-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.config-section h4 {
+  margin-bottom: 16px;
+  color: #1890ff;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 8px;
+}
+
+.task-card {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.task-status-pending {
+  border-left: 4px solid #faad14;
+}
+
+.task-status-running {
+  border-left: 4px solid #1890ff;
+}
+
+.task-status-completed {
+  border-left: 4px solid #52c41a;
+}
+
+.task-status-failed {
+  border-left: 4px solid #ff4d4f;
+}
+
+.visualization-container {
+  width: 100%;
+  height: 600px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.statistics-card {
+  text-align: center;
+  padding: 16px;
+}
+
+.statistics-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1890ff;
+}
+
+.statistics-label {
+  color: #666;
+  font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .ant-layout-sider {
+    position: fixed !important;
+    height: 100vh;
+    left: 0;
+    z-index: 999;
+  }
+  
+  .ant-layout-sider-collapsed {
+    left: -200px;
+  }
+  
+  .site-layout {
+    margin-left: 0 !important;
+  }
+}
+
+/* 加载动画 */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* 图谱节点样式 */
+.graph-node {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.graph-node:hover {
+  stroke-width: 3px;
+  stroke: #1890ff;
+}
+
+.graph-link {
+  stroke: #999;
+  stroke-opacity: 0.6;
+  stroke-width: 1px;
+}
+
+.graph-text {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+/* 工具提示样式 */
+.tooltip {
+  position: absolute;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1000;
+}

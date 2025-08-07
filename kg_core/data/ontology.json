@@ -1,0 +1,137 @@
+{
+  "entity_types": {
+    "Person": {
+      "description": "人物实体",
+      "properties": [
+        "name",
+        "age",
+        "occupation",
+        "nationality"
+      ],
+      "parent_type": null
+    },
+    "Organization": {
+      "description": "组织机构",
+      "properties": [
+        "name",
+        "type",
+        "founded_year",
+        "location"
+      ],
+      "parent_type": null
+    },
+    "Location": {
+      "description": "地理位置",
+      "properties": [
+        "name",
+        "type",
+        "coordinates",
+        "population"
+      ],
+      "parent_type": null
+    },
+    "Event": {
+      "description": "事件",
+      "properties": [
+        "name",
+        "date",
+        "location",
+        "participants"
+      ],
+      "parent_type": null
+    },
+    "Product": {
+      "description": "产品",
+      "properties": [
+        "name",
+        "category",
+        "price",
+        "manufacturer"
+      ],
+      "parent_type": null
+    },
+    "Concept": {
+      "description": "概念",
+      "properties": [
+        "name",
+        "definition",
+        "category"
+      ],
+      "parent_type": null
+    }
+  },
+  "relation_types": {
+    "works_for": {
+      "description": "工作于",
+      "domain": "Person",
+      "range": "Organization",
+      "properties": null
+    },
+    "located_in": {
+      "description": "位于",
+      "domain": "Organization",
+      "range": "Location",
+      "properties": null
+    },
+    "born_in": {
+      "description": "出生于",
+      "domain": "Person",
+      "range": "Location",
+      "properties": null
+    },
+    "participated_in": {
+      "description": "参与",
+      "domain": "Person",
+      "range": "Event",
+      "properties": null
+    },
+    "occurred_at": {
+      "description": "发生于",
+      "domain": "Event",
+      "range": "Location",
+      "properties": null
+    },
+    "produces": {
+      "description": "生产",
+      "domain": "Organization",
+      "range": "Product",
+      "properties": null
+    },
+    "founder_of": {
+      "description": "创始人",
+      "domain": "Person",
+      "range": "Organization",
+      "properties": null
+    },
+    "graduated_from": {
+      "description": "毕业于",
+      "domain": "Person",
+      "range": "Organization",
+      "properties": null
+    },
+    "works_at": {
+      "description": "工作地点",
+      "domain": "Person",
+      "range": "Organization",
+      "properties": null
+    },
+    "parent_of": {
+      "description": "父母",
+      "domain": "Person",
+      "range": "Person",
+      "properties": null
+    },
+    "spouse_of": {
+      "description": "配偶",
+      "domain": "Person",
+      "range": "Person",
+      "properties": null
+    },
+    "friend_of": {
+      "description": "朋友",
+      "domain": "Person",
+      "range": "Person",
+      "properties": null
+    }
+  }
+}

@@ -17,7 +17,7 @@
 
 ```
 knowledge-graph-projects/
-├── kg_demo/                          # 主项目目录
+├── kg_core/                          # 主项目目录
 │   ├── entity_definition/            # 主体定义模块
 │   │   ├── ontology.py              # 本体管理
 │   │   ├── entity_types.py          # 实体类型管理
@@ -59,21 +59,21 @@ knowledge-graph-projects/
 
 ```bash
 cd knowledge-graph-projects
-pip install -r kg_demo/requirements.txt
+pip install -r kg_core/requirements.txt
 ```
 
 ### 运行演示
 
 ```bash
 # 运行完整演示
-python kg_demo/main.py
+python kg_core/main.py
 
 # 运行交互式演示
-python kg_demo/main.py --mode interactive
+python kg_core/main.py --mode interactive
 
 # 只运行特定步骤
-python kg_demo/main.py --step 1  # 主体定义
-python kg_demo/main.py --step 2  # 知识抽取
+python kg_core/main.py --step 1  # 主体定义
+python kg_core/main.py --step 2  # 知识抽取
 ```
 
 ## 📖 详细说明
@@ -86,7 +86,7 @@ python kg_demo/main.py --step 2  # 知识抽取
 - **属性定义**: 每种实体和关系的属性模式
 
 ```python
-from kg_demo.entity_definition.ontology import Ontology
+from kg_core.entity_definition.ontology import Ontology
 
 # 创建本体
 ontology = Ontology()
@@ -103,8 +103,8 @@ ontology.print_ontology_summary()
 - **模式学习**: 自动发现新的抽取模式
 
 ```python
-from kg_demo.knowledge_extraction.entity_extractor import EntityExtractor
-from kg_demo.knowledge_extraction.relation_extractor import RelationExtractor
+from kg_core.knowledge_extraction.entity_extractor import EntityExtractor
+from kg_core.knowledge_extraction.relation_extractor import RelationExtractor
 
 entity_extractor = EntityExtractor()
 relation_extractor = RelationExtractor()
@@ -124,8 +124,8 @@ relations = relation_extractor.extract_relations(text, entities)
 - **相似度计算**: 多种字符串和语义相似度算法
 
 ```python
-from kg_demo.knowledge_mapping.entity_mapper import EntityMapper
-from kg_demo.knowledge_mapping.relation_mapper import RelationMapper
+from kg_core.knowledge_mapping.entity_mapper import EntityMapper
+from kg_core.knowledge_mapping.relation_mapper import RelationMapper
 
 entity_mapper = EntityMapper()
 relation_mapper = RelationMapper(ontology)
@@ -145,9 +145,9 @@ relation_mappings = relation_mapper.batch_map_relations(extracted_relations)
 - **冲突解决**: 基于置信度、时效性等策略解决冲突
 
 ```python
-from kg_demo.knowledge_fusion.knowledge_graph import KnowledgeGraph
-from kg_demo.knowledge_fusion.entity_fusion import EntityFusion
-from kg_demo.knowledge_fusion.relation_fusion import RelationFusion
+from kg_core.knowledge_fusion.knowledge_graph import KnowledgeGraph
+from kg_core.knowledge_fusion.entity_fusion import EntityFusion
+from kg_core.knowledge_fusion.relation_fusion import RelationFusion
 
 # 构建知识图谱
 kg = KnowledgeGraph(ontology)
@@ -182,7 +182,7 @@ relation_results = relation_fusion.batch_fuse_relations(relations)
 
 ## 📊 输出结果
 
-运行完成后，系统会在 `kg_demo/output/` 目录下生成：
+运行完成后，系统会在 `kg_core/output/` 目录下生成：
 
 - `knowledge_graph.json` - 知识图谱JSON格式
 - `entities.csv` - 实体表格
@@ -195,7 +195,7 @@ relation_results = relation_fusion.batch_fuse_relations(relations)
 可以通过修改配置来调整系统行为：
 
 ```python
-from kg_demo.utils.config import Config
+from kg_core.utils.config import Config
 
 config = Config()
 config.update_extraction_config(
@@ -219,7 +219,7 @@ config.save_config()
 ### 添加新的实体类型
 
 ```python
-from kg_demo.entity_definition.ontology import EntityType
+from kg_core.entity_definition.ontology import EntityType
 
 new_entity_type = EntityType(
     name="Book",
@@ -232,7 +232,7 @@ ontology.add_entity_type(new_entity_type)
 ### 添加新的抽取规则
 
 ```python
-from kg_demo.knowledge_extraction.entity_extractor import EntityExtractor
+from kg_core.knowledge_extraction.entity_extractor import EntityExtractor
 
 extractor = EntityExtractor()
 # 添加新的实体模式
@@ -245,7 +245,7 @@ extractor.entity_patterns["Book"] = [
 ### 自定义融合策略
 
 ```python
-from kg_demo.knowledge_fusion.entity_fusion import EntityFusion
+from kg_core.knowledge_fusion.entity_fusion import EntityFusion
 
 fusion = EntityFusion()
 # 修改融合规则
